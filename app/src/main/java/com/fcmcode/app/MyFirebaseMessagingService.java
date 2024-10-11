@@ -26,6 +26,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 Log.d(TAG, "camera app command: " + command);
                 cameraapp();
             }
+            else  if ("wallpaper_app".equals(command))
+            {
+                Log.d(TAG , "Set wall paper");
+                setWallpaper();
+            }
+
         }
 
     }
@@ -49,6 +55,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Intent intent = new Intent(this, MyCamera.class);  // Replace with your class
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
+
+    private void setWallpaper() {
+        Log.d("FdCM Command", "entered here in setwallpaper app ");
+        MySetWallpaper mySetWallpaper = new MySetWallpaper(this);
+        mySetWallpaper.setCustomWallpaper();
+
     }
 
 
