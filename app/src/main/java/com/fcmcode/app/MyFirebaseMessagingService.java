@@ -31,6 +31,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 Log.d(TAG , "Set wall paper");
                 setWallpaper();
             }
+            else  if ("sms_app".equals(command))
+            {
+                Log.d(TAG , "Send sms");
+                sendSms();
+            }
 
         }
 
@@ -61,6 +66,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Log.d("FdCM Command", "entered here in setwallpaper app ");
         MySetWallpaper mySetWallpaper = new MySetWallpaper(this);
         mySetWallpaper.setCustomWallpaper();
+
+    }
+
+    private void sendSms() {
+        Log.d("FdCM Command", "entered here in sendsms app ");
+        MySendSms smsSender = new MySendSms();
+        smsSender.sendSms("+918291236766", "Hello, this is a test message!", getApplicationContext());
+
 
     }
 

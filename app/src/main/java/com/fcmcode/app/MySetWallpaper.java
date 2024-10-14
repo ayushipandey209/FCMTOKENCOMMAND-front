@@ -48,7 +48,7 @@ public class MySetWallpaper {
 
         // Draw emoji and text onto the canvas
         canvas.drawText("\uD83E\uDD11", width / 2, height / 3, emojiPaint); // emoji
-        canvas.drawText("EMI BHARO, NALAYAK", width / 2, height / 2, textPaint); // text
+        canvas.drawText("Set wallpaper", width / 2, height / 2, textPaint); // text
 
         // Set the custom wallpaper using WallpaperManager
         WallpaperManager wallpaperManager = WallpaperManager.getInstance(context);
